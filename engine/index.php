@@ -135,12 +135,12 @@ if ($config['index_news'] == 1 and !$do and $news_colls != 0) {
         $main_news = cache('main_news');
         if ($main_news == "") {
             $news = $db->super_query("SELECT * FROM news ORDER BY date DESC LIMIT 1");
-            $main_news = $news['author'] . '|' . $news['name'] . '|' . $news['text'] . '|' . $news['date'] . '|' . $news['count_comm'] . '|' . $news['id'];
+            $main_news = $news['author'] . '|' . $news['name'] . '|' . $news['text'] . '|' . $news['date'] . '|' . $news['count_comms'] . '|' . $news['id'];
             create_cache('main_news', $main_news);
         } 
     } else {
         $news = $db->super_query("SELECT * FROM news ORDER BY date DESC LIMIT 1");
-        $main_news = $news['author'] . '|' . $news['name'] . '|' . $news['text'] . '|' . $news['date'] . '|' . $news['count_comm'] . '|' . $news['id'];
+        $main_news = $news['author'] . '|' . $news['name'] . '|' . $news['text'] . '|' . $news['date'] . '|' . $news['count_comms'] . '|' . $news['id'];
     } 
 
     $news = explode('|', $main_news);
