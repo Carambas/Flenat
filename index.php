@@ -124,11 +124,6 @@ switch ($do) {
     case "login" :
         include ROOT_DIR . '/modules/login/index.php';
         break;
-		
-    case "forum" :
-        $it_title = 'Форум';
-        include ROOT_DIR . '/modules/forum/index.php';
-        break;
 
     case "online" :
         $it_title = 'Онлайн';

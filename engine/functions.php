@@ -571,9 +571,6 @@ function iBr($message) { return str_replace("\n","<br />",$message); }
 // ///// ББ коды
 function bb_code($message)
 {
-    global $config;
-
-    if ($config['bbcode'] == 1) {
         $message = preg_replace('#\[big\](.*?)\[/big\]#si', '<big>\1</big>', $message);
         $message = preg_replace('#\[center\](.*?)\[/center\]#si', '<center>\1</center>', $message);
         $message = preg_replace('#\[b\](.*?)\[/b\]#si', '<b>\1</b>', $message);
@@ -587,7 +584,6 @@ function bb_code($message)
         $message = preg_replace('#\[q\](.*?)\[/q\]#si', '<div class="quote">\1</div>', $message);
 		$message = preg_replace_callback('#\[code\](.+)\[/code\]#si', 'code', $message);
         $message = preg_replace_callback('~\\[url=(http://.+?)\\](.+?)\\[/url\\]|(http://(www.)?[0-9a-z\.-]+\.[0-9a-z]{2,6}[0-9a-zA-Z/\?\.\~&amp;_=/%-:#]*)~', 'url_replace_bb', $message);
-    } 
     return $message;
 } 
 

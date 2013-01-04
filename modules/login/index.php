@@ -43,9 +43,9 @@ if (! $login) {
         $tpl->set_block("'\\[admin\\](.*?)\\[/admin\\]'si", "");
     }
 	
-	$tpl->set ('[smiles]', '<a href="' . $PHP_SELF . '?do=other&act=smiles">');
+	$tpl->set ('[smiles]', '<a href="' . $PHP_SELF . '?do=others&act=smiles">');
 	$tpl->set ('[/smiles]', '</a>');
-	$tpl->set ('[bbcode]', '<a href="' . $PHP_SELF . '?do=other&act=bbcode">');
+	$tpl->set ('[bbcode]', '<a href="' . $PHP_SELF . '?do=others&act=bbcode">');
 	$tpl->set ('[/bbcode]', '</a>'); 
     $tpl->compile ('content');
 	$tpl->clear();

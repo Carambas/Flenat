@@ -1,10 +1,5 @@
 <?php if (!defined('_ENGINE_')) die("Ошибка получения доступа.");
-// ///////////////////////////////////////////////////////////////
-// //
-// //
-// ///////////////////////////////////////////////////////////////
-if ($config['smiles'] == 1) {
-    $it_title = 'Справка по смайлам';
+$it_title = 'Справка по смайлам';
     $its_page = intval($config['smiles_str']);
     $its_mod = 'others&act=smiles';
     $its_cstart = intval($_REQUEST['cstart']);
@@ -31,10 +26,7 @@ if ($config['smiles'] == 1) {
     $tpl->compile('content');
     $tpl->clear();
     $its_all = intval($total);
-    navigation_down();
-} else {
-    $tpl->copy_tpl .= 'Смайлы отключены.<br><br>';
-} 
+    navigation_down(); 
 $tpl->compile('content');
 $tpl->clear();
 

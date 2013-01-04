@@ -1,11 +1,7 @@
 <?php if (!defined('_ENGINE_')) die("Ошибка получения доступа.");
-// ///////////////////////////////////////////////////////////////
-// //
-// //
-// ///////////////////////////////////////////////////////////////
-if ($config['bbcode'] == 1) {
-    $it_title = 'Справка по стилям';
-    $tpl->copy_tpl .= <<<HTML
+
+$it_title = 'Справка по стилям';
+$tpl->copy_tpl .= <<<HTML
 [center]По центру[/center] - Текст по центру<br>
 [red]<font color="#C00">Красный</font>[/red] - Красный текст<br>
 [green]<font color="#6C0">Зеленый</font>[/green] - Зелёный текст<br>
@@ -20,10 +16,6 @@ if ($config['bbcode'] == 1) {
 [code]Код[/code] - Вставка кода<br>
 [url=http://site.ru]mysite.ru[/url] - Ссылка на сайт<br><br>
 HTML;
-} else {
-    $tpl->copy_tpl .= 'Стили текста отключены.<br><br>';
-} 
 $tpl->compile('content');
 $tpl->clear();
-
 ?>
