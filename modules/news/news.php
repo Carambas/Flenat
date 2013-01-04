@@ -6,6 +6,10 @@ $row = $db->super_query("SELECT * FROM news WHERE id='$id'");
 
 if ($row['id'])
 {
+	if ($_SESSION['news_{$id}'] !== $id) { 
+		$_SESSION['news_{$id}'] = $id; 
+		$db->query("UPDATE news set count=count+1 where id='{$id}'");
+	}
 	$tpl->load_tpl('news.tpl');
 	$tpl->set_block("'\\[news_small\\](.*?)\\[/news_small\\]'si", "");
 	$tpl->set('[news_full]', '');

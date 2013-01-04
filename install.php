@@ -522,7 +522,7 @@ PRIMARY KEY ( `id` )
   `text` text NOT NULL,
   `text_full` text NOT NULL,
   `count` int(10) NOT NULL,
-  `count_comm` int(11) NOT NULL,
+  `count_comms` int(11) NOT NULL,
   `date` int(11) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=utf8";
