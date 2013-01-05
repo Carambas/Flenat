@@ -62,6 +62,10 @@ if (! $login and $config['guest_down'] == 0) {
 		$File = $coun_file['file'];
 
 		if ($coun_file['id']) {
+			
+			$db->query("UPDATE downloads_files SET count = count+1 WHERE id ='" . $id . "'");
+			if($login) $db->query("UPDATE users SET count_down = count_down+1 WHERE user_id ='" . $user_id['user_id'] . "'");
+			
 			$File_new_name = substr_replace($File, '', 0, 10);
 			$Content = @file_get_contents(ROOT_DIR . '/uploads/downloads/files/'.$File);
 			force_download($File_new_name, $Content, false, true);
@@ -92,9 +96,6 @@ if (! $login and $config['guest_down'] == 0) {
 				header('Pragma: no-cache');
 				header("Content-Length: ".strlen($Content));
 			}
-		
-			$db->query("UPDATE downloads_files SET count = count+1 WHERE id ='" . $id . "'");
-			if($login) $db->query("UPDATE users SET count_down = count_down+1 WHERE user_id ='" . $user_id['user_id'] . "'");
 		} else {
 			info('Ошибка', 'Запрошенный файл несуществует. ');
 			$tpl->copy_tpl = '<div class="block"><a href="javascript:history.go(-1)">Вернуться назад</a></div>';
