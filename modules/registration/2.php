@@ -43,8 +43,8 @@ if ($is_reg == 1 and $registration['password_2'] == '') {
     $is_reg++;
 } 
 
-if ($is_reg == 1 and $registration['name'] != '' and strlen($registration['name']) < 4) {
-    $error .= 'Логин должен быть более 4 символов. ';
+if ($is_reg == 1 and $registration['name'] != '' and strlen($registration['name']) < 3) {
+    $error .= 'Логин должен быть более 3 символов. ';
     $is_reg++;
 } 
 
